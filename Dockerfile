@@ -39,7 +39,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 
 # Kopiujemy konfigurację Supervisord
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY .env .env
+
 # Wystawiamy port 80 dla Nginx
 EXPOSE 80
 
