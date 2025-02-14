@@ -19,9 +19,9 @@ WORKDIR /var/www/html
 COPY . .
 
 # 6. Instalujemy zależności Laravel + Guzzle
-RUN composer install --no-dev --optimize-autoloader && \
+RUN composer config -g secure-http true && \
+    composer install --no-dev --optimize-autoloader && \
     composer require guzzlehttp/guzzle
-
 # 7. Ustawiamy uprawnienia dla storage i bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
